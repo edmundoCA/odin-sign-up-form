@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo - sign up</title>
+  <!-- <link rel="stylesheet" href="reset.css"> -->
   <link rel="stylesheet" href="styles.css">
   <script src="javascript.js" defer></script>
 </head>
@@ -22,45 +23,47 @@
     </p>
   </div>
   <div class="main">
-    <div>
+    <div class="main__description">
       <p>This is not a real online service! You know you need something like this in your life to help you realize
         your deepest dreams. Sign up <em>now</em> to get started.</p>
       <p>You <em>know</em> you want to.</p>
     </div>
     <div>
-      <form action="https://httpbin.org/post" method="post">
-        <h2>Let's do this!</h2>
-        <ul>
-          <li>
-            <label for="first_name">FIRST NAME</label>
-            <input type="text" id="first_name" name="first_name">
-          </li>
-          <li>
-            <label for="last_name">LAST NAME</label>
-            <input type="text" id="last_name" name="last_name">
-          </li>
-          <li>
-            <label for="email">EMAIL</label>
-            <input type="email" id="email" name="email">
-          </li>
-          <li>
-            <label for="phone_number">PHONE NUMBER</label>
-            <input type="tel" id="phone_number" name="phone_number">
-          </li>
-          <li>
-            <label for="password">PASSWORD</label>
-            <input type="password" id="password" name="password">
-          </li>
-          <li>
-            <label for="confirm_password">CONFIRM_PASSWORD</label>
-            <input type="password" id="confirm_password" name="confirm_password">
-          </li>
-        </ul>
-        <button type="submit">Create Account</button>
+      <form class="main__form" action="https://httpbin.org/post" method="post">
+        <div class="form__body">
+          <h2>Let's do this!</h2>
+          <ul>
+            <li>
+              <label class="form__label" for="first_name">FIRST NAME</label>
+              <input class="form__input" type="text" id="first_name" name="first_name">
+            </li>
+            <li>
+              <label class="form__label" for="last_name">LAST NAME</label>
+              <input class="form__input" type="text" id="last_name" name="last_name">
+            </li>
+            <li>
+              <label class="form__label" for="email">EMAIL</label>
+              <input class="form__input" type="email" id="email" name="email">
+            </li>
+            <li>
+              <label class="form__label" for="phone_number">PHONE NUMBER</label>
+              <input class="form__input" type="tel" id="phone_number" name="phone_number">
+            </li>
+            <li>
+              <label class="form__label" for="password">PASSWORD</label>
+              <input class="form__input" type="password" id="password" name="password">
+            </li>
+            <li>
+              <label class="form__label" for="confirm_password">CONFIRM_PASSWORD</label>
+              <input class="form__input" type="password" id="confirm_password" name="confirm_password">
+            </li>
+          </ul>
+        </div>
+        <button class="btn__submit" type="submit">Create Account</button>
       </form>
     </div>
-    <div>
-      <p>Already have and account? <button type="button">Log in</button></p>
+    <div class="login">
+      <p>Already have and account? <a class="a--btn" href="#"><strong>Log in</strong></a></p>
     </div>
   </div>
 </body>
