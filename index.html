@@ -29,7 +29,7 @@
       <p>You <em>know</em> you want to.</p>
     </div>
     <div>
-      <form class="main__form" action="https://httpbin.org/post" method="post">
+      <form class="main__form" action="#" method="get">
         <div class="form__body">
           <h2>Let's do this!</h2>
           <ul>
@@ -42,20 +42,24 @@
               <input class="form__input" type="text" id="last_name" name="last_name">
             </li>
             <li>
-              <label class="form__label" for="email">EMAIL</label>
-              <input class="form__input" type="email" id="email" name="email">
+              <label class="form__label" for="mail">EMAIL</label>
+              <input class="form__input" type="email" id="mail" name="mail" required pattern=".+@.+\..+">
+              <span class="error" aria-live="polite"></span>
             </li>
             <li>
               <label class="form__label" for="phone_number">PHONE NUMBER</label>
-              <input class="form__input" type="tel" id="phone_number" name="phone_number">
+              <input class="form__input" type="tel" id="phone_number" name="phone_number" minlength="10" maxlength="10">
+              <span class="error" aria-live="polite"></span>
             </li>
             <li>
               <label class="form__label" for="password">PASSWORD</label>
               <input class="form__input" type="password" id="password" name="password">
+              <span class="error" aria-live="polite"></span>
             </li>
             <li>
-              <label class="form__label" for="confirm_password">CONFIRM_PASSWORD</label>
+              <label class="form__label" for="confirm_password">CONFIRM PASSWORD</label>
               <input class="form__input" type="password" id="confirm_password" name="confirm_password">
+              <span class="error" aria-live="polite"></span>
             </li>
           </ul>
         </div>

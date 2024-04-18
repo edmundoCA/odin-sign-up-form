@@ -5,7 +5,7 @@
     --input-clr: #E5E7EB;
     --input-clr--invalid: red;
     --input-clr--focus: blue;
-    --main-color--2nd: rgb(249,	250,	251);
+    --main-color--2nd: rgb(249, 250, 251);
     --btn-clr: #596D48;
     --col-gap: 72px;
     --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -84,6 +84,7 @@ body {
     flex: 1 0 calc(50% - var(--col-gap));
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .form__label {
@@ -164,4 +165,19 @@ h2 {
 
 .login {
     padding: 48px;
+}
+
+.error {
+    width: 100%;
+    padding: 0;
+
+    font-size: 0.7rem;
+    color: red;
+
+    position: absolute;
+    top: 44px;
+}
+
+.error.active {
+    padding: 0.3em;
 }
