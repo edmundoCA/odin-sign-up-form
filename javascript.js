@@ -7,6 +7,7 @@ const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm_password");
 
 const emailError = document.querySelector("#mail + span.error");
+const passwordError = document.querySelector("#password + span.error");
 
 email.addEventListener("input", (event) => {
     if (email.validity.valid) {
@@ -16,10 +17,30 @@ email.addEventListener("input", (event) => {
       showError();
     }
   });
+
+  password.addEventListener("input", event => {
+    if (password.validity.valid) {
+      passwordError.textContent = "";
+      passwordError.className = "error";
+    } else {
+      showPasswordError();
+    }
+  });
+
+  confirmPassword.addEventListener("input", event => {
+    if (confirmPassword.value === password.value) {
+      passwordError.textContent = "";
+      passwordError.className = "error";
+    } else {
+      showConfirmPasswordError();
+    }
+  });
   
   form.addEventListener("submit", (event) => {
-    if (!email.validity.valid) {
+    if (!email.validity.valid || !password.validity.valid || password.value !== confirmPassword.value) {
       showError();
+      showPasswordError();
+      showConfirmPasswordError();
       event.preventDefault();
     }
   });
@@ -34,4 +55,26 @@ email.addEventListener("input", (event) => {
     }
   
     emailError.className = "error active";
+  }
+
+  function showPasswordError() {
+    if (password.validity.valueMissing) {
+      passwordError.textContent = "You need to enter a password.";
+    } else if (password.validity.tooShort) {
+      passwordError.textContent = `Password should be at least ${password.minLength} characters; you entered ${password.value.length}.`;
+    } else if (password.value == password.value.toUpperCase()) {
+      passwordError.textContent = "Password should contain at least one small letter.";
+    } else if (password.value == password.value.toLowerCase()) {
+      passwordError.textContent = "Password should contain at least one capital letter.";
+    } else if (password.value.match(/\d/) === null) {
+      passwordError.textContent = "Password should contain at least one number.";
+    } 
+  }
+
+  function showConfirmPasswordError() {
+    if (password.value !== confirmPassword.value) {
+      passwordError.textContent = "Entered passwords are different."
+    }
+
+    passwordError.className = "error active";
   }

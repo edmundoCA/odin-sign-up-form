@@ -35,30 +35,30 @@
           <ul>
             <li>
               <label class="form__label" for="first_name">FIRST NAME</label>
-              <input class="form__input" type="text" id="first_name" name="first_name">
+              <input class="form__input" type="text" id="first_name" name="first_name" required>
             </li>
             <li>
               <label class="form__label" for="last_name">LAST NAME</label>
-              <input class="form__input" type="text" id="last_name" name="last_name">
+              <input class="form__input" type="text" id="last_name" name="last_name" required>
             </li>
             <li>
               <label class="form__label" for="mail">EMAIL</label>
-              <input class="form__input" type="email" id="mail" name="mail" required pattern=".+@.+\..+">
+              <input class="form__input" type="email" id="mail" name="mail" pattern=".+@.+\..+" required>
               <span class="error" aria-live="polite"></span>
             </li>
             <li>
               <label class="form__label" for="phone_number">PHONE NUMBER</label>
-              <input class="form__input" type="tel" id="phone_number" name="phone_number" minlength="10" maxlength="10">
+              <input class="form__input" type="tel" id="phone_number" name="phone_number" minlength="10" maxlength="10" required>
               <span class="error" aria-live="polite"></span>
             </li>
             <li>
               <label class="form__label" for="password">PASSWORD</label>
-              <input class="form__input" type="password" id="password" name="password">
+              <input class="form__input" type="password" id="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" minlength="8" required>
               <span class="error" aria-live="polite"></span>
             </li>
             <li>
               <label class="form__label" for="confirm_password">CONFIRM PASSWORD</label>
-              <input class="form__input" type="password" id="confirm_password" name="confirm_password">
+              <input class="form__input" type="password" id="confirm_password" name="confirm_password" required>
               <span class="error" aria-live="polite"></span>
             </li>
           </ul>
